@@ -1718,6 +1718,27 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
+"@neongd/json-rpc@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@neongd/json-rpc/-/json-rpc-0.0.1.tgz#e0673c24b9ce666515b563ab88e17d54e5b0fcf3"
+  integrity sha512-L/t4o/VSUqRMbF4E6tbY1Sp5vaRDdmFr9sdJ7raUEWWTyKtCC8Vw6/isIEIZoJvk86lycACXaQBcyvzO1WZgOQ==
+  dependencies:
+    safe-json-utils "^1.1.1"
+
+"@neongd/neo-dapi@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@neongd/neo-dapi/-/neo-dapi-0.0.1.tgz#c8c0e1e791d78ca3e3a555dbe6d8b8d3d2371499"
+  integrity sha512-PwT8D9wStS2x/LgcOuezpHYmQCs1Gkspom+ZdDGJ+Nr54q6XumgaYzDNOWLEwf4F7qN1v659Qk/N1dl14vKSgg==
+  dependencies:
+    "@neongd/neo-provider" "^0.0.1"
+
+"@neongd/neo-provider@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@neongd/neo-provider/-/neo-provider-0.0.1.tgz#8734d74e3085d99ffa9d3ccaedb6faa3ad7d402e"
+  integrity sha512-YxQy8TvDRHmti0BN7G68L8zuHRLGMEs2mk7/+1dt0Uqymft8jlCqlA9uwL0JhZ30ZfWJCv7ZkTr9yPm6s+Adag==
+  dependencies:
+    "@neongd/json-rpc" "^0.0.1"
+
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz#7619c2eb21b25483f6d167548b4cfd5a7488c3d5"
@@ -10072,6 +10093,11 @@ safe-buffer@>=5.1.0, safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1,
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.2.0.tgz#b74daec49b1148f88c64b68d49b1e815c1f2f519"
   integrity sha512-fZEwUGbVl7kouZs1jCdMLdt95hdIv0ZeHg6L7qPeciMZhZ+/gdesW4wgTARkrFWEpspjEATAzUGPG8N2jJiwbg==
+
+safe-json-utils@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/safe-json-utils/-/safe-json-utils-1.1.1.tgz#0e883874467d95ab914c3f511096b89bfb3e63b1"
+  integrity sha512-SAJWGKDs50tAbiDXLf89PDwt9XYkWyANFWVzn4dTXl5QyI8t2o/bW5/OJl3lvc2WVU4MEpTo9Yz5NVFNsp+OJQ==
 
 safe-regex@^1.1.0:
   version "1.1.0"
