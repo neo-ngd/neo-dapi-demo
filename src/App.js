@@ -21,7 +21,7 @@ function App() {
     </div>
   ) : (
     <div>
-      Dapi Provider is not available1.
+      Dapi Provider is not available.
     </div>
   );
 }

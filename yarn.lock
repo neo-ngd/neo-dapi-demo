@@ -1718,52 +1718,54 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
-"@neongd/json-rpc@^0.0.2-alpha.13+7cf71c4":
-  version "0.0.2-alpha.13"
-  resolved "https://registry.yarnpkg.com/@neongd/json-rpc/-/json-rpc-0.0.2-alpha.13.tgz#08de7c0f183c963112b98ffde60f019946d97e46"
-  integrity sha512-YR5qFlY3gWyeDt7FoKLorDEGIZpzKxU03RdD0Kz9Gf7pxoBCAMYE1oP47V6xXNCC8bRiEvhqFzE4p7KXto2Geg==
+"@neongd/json-rpc@^0.0.2-alpha.15+6fae97f":
+  version "0.0.2-alpha.15"
+  resolved "https://registry.yarnpkg.com/@neongd/json-rpc/-/json-rpc-0.0.2-alpha.15.tgz#214ea8c4b1c2bd8c3d0a70b427a675458ad0fdea"
+  integrity sha512-KSSVuto80iEopwO7eS8FvDnMfhJ2zwo+Y5GdYddYOJv168euXR7RSEWHYCPHBkTEKfThbx83A+JMGJwF4fbSIQ==
   dependencies:
     axios "^0.21.1"
+    events "^3.3.0"
     safe-json-utils "^1.1.1"
     ws "^8.0.0"
 
-"@neongd/neo-dapi-fura@^0.0.1-alpha.23+7cf71c4":
-  version "0.0.1-alpha.23"
-  resolved "https://registry.yarnpkg.com/@neongd/neo-dapi-fura/-/neo-dapi-fura-0.0.1-alpha.23.tgz#39bc3771773f8a7307830244e3314169b38dbf42"
-  integrity sha512-TLqHEsuE8RUbwIPWLcnXIHt9eaF+Q9R39DiNgknqeOx+w07mgtid4blzLPmwydZGSAUkCgrxmpiYaL3szWXo8w==
+"@neongd/neo-dapi-fura@^0.0.1-alpha.25+6fae97f":
+  version "0.0.1-alpha.25"
+  resolved "https://registry.yarnpkg.com/@neongd/neo-dapi-fura/-/neo-dapi-fura-0.0.1-alpha.25.tgz#e7b777897caa7b28eca55a52c4eab4f55d9f0345"
+  integrity sha512-mXMLroa6cNH+ZFgpxBozBylVxxq9YtIPrNk7519k2QegmGSE6wXbf1+kSQbztEZkKfLBkhyzz6vWLm18xoi6Yw==
   dependencies:
-    "@neongd/neo-provider" "^0.0.2-alpha.13+7cf71c4"
+    "@neongd/neo-provider" "^0.0.2-alpha.15+6fae97f"
 
-"@neongd/neo-dapi-node@^0.0.1-alpha.23+7cf71c4":
-  version "0.0.1-alpha.23"
-  resolved "https://registry.yarnpkg.com/@neongd/neo-dapi-node/-/neo-dapi-node-0.0.1-alpha.23.tgz#1fd3db5d2e2582d3b10655316f0e7dcb62a3ce8d"
-  integrity sha512-NFPWpdC2Q4sIdFTaURGGa59Ht9SMbxFN+Lc9KyOeCAhkOTWrVngxEf4wWRt+H08K536zWkPUDjn1AToa73YMGg==
+"@neongd/neo-dapi-node@^0.0.1-alpha.25+6fae97f":
+  version "0.0.1-alpha.25"
+  resolved "https://registry.yarnpkg.com/@neongd/neo-dapi-node/-/neo-dapi-node-0.0.1-alpha.25.tgz#07cff259d20460941c467b3bd67ff92dd0d2fdc6"
+  integrity sha512-eY9iLbpKyk6MEgmqz6zNJkCGVQ+UX5EykHmhe1J4C+zc0cqf4R+SNP7muJmw6dkDEvrpaetHv1IR61QsR0loDw==
   dependencies:
-    "@neongd/neo-provider" "^0.0.2-alpha.13+7cf71c4"
+    "@neongd/neo-provider" "^0.0.2-alpha.15+6fae97f"
 
-"@neongd/neo-dapi-wallet@^0.0.1-alpha.23+7cf71c4":
-  version "0.0.1-alpha.23"
-  resolved "https://registry.yarnpkg.com/@neongd/neo-dapi-wallet/-/neo-dapi-wallet-0.0.1-alpha.23.tgz#a03260f1ed2618108c6de60bf3a540de31a6192b"
-  integrity sha512-4rJJhCV9H1dtGuMpf7/YbSp3ZrYTzGp2oLgcSYGHlfzIMR6Bct7A6vwc0t6zKlnToLsrQeknHFb4JLwAGeUgiw==
+"@neongd/neo-dapi-wallet@^0.0.1-alpha.25+6fae97f":
+  version "0.0.1-alpha.25"
+  resolved "https://registry.yarnpkg.com/@neongd/neo-dapi-wallet/-/neo-dapi-wallet-0.0.1-alpha.25.tgz#b7d7023d12cfbe3203ff8c76a6dcca1eb37f5c7f"
+  integrity sha512-c7fMEwHruDEwWkmAl+HOqbGhkwU0t0PbuSlu49mo/s0c5XF+sNsHO7Mm3aPtRH4S4XifAt/qJA1/JJWwoy9trw==
   dependencies:
-    "@neongd/neo-provider" "^0.0.2-alpha.13+7cf71c4"
+    "@neongd/neo-provider" "^0.0.2-alpha.15+6fae97f"
 
-"@neongd/neo-dapi@^0.0.2-alpha.13":
-  version "0.0.2-alpha.13"
-  resolved "https://registry.yarnpkg.com/@neongd/neo-dapi/-/neo-dapi-0.0.2-alpha.13.tgz#d607995cc182f819fbd9fa802d47898d1c03e653"
-  integrity sha512-v4lHz8zKFCOkzQyRubW6lm8wMXMY0KkPHfAIzL5or4JHR5wNvAl7DfJU3OI4npXkUU69Rc+9fp0723ds+AKP5g==
+"@neongd/neo-dapi@^0.0.2-alpha.15":
+  version "0.0.2-alpha.15"
+  resolved "https://registry.yarnpkg.com/@neongd/neo-dapi/-/neo-dapi-0.0.2-alpha.15.tgz#4b33f3e7e5d0ae31b15a5b2e7331c68c8af37536"
+  integrity sha512-pGGJ/qz6AifRwMPPGKAGAB4ImEmsDu0FyG8aUn1pnk2RyWvdLVWAR6Vu8Ld7ZGF5MmufePqZrfZxCmhgl8/jBw==
   dependencies:
-    "@neongd/neo-dapi-fura" "^0.0.1-alpha.23+7cf71c4"
-    "@neongd/neo-dapi-node" "^0.0.1-alpha.23+7cf71c4"
-    "@neongd/neo-dapi-wallet" "^0.0.1-alpha.23+7cf71c4"
-    "@neongd/neo-provider" "^0.0.2-alpha.13+7cf71c4"
+    "@neongd/neo-dapi-fura" "^0.0.1-alpha.25+6fae97f"
+    "@neongd/neo-dapi-node" "^0.0.1-alpha.25+6fae97f"
+    "@neongd/neo-dapi-wallet" "^0.0.1-alpha.25+6fae97f"
+    "@neongd/neo-provider" "^0.0.2-alpha.15+6fae97f"
 
-"@neongd/neo-provider@^0.0.2-alpha.13+7cf71c4":
-  version "0.0.2-alpha.13"
-  resolved "https://registry.yarnpkg.com/@neongd/neo-provider/-/neo-provider-0.0.2-alpha.13.tgz#3d7836ca10e5e623be66ab82694a8dca8fcc7194"
-  integrity sha512-xOgeGn6Wsto5vZ9qoxqDoFtSZmdOw7X9+Im/ncHOIT6SM3OdpbwPp47U3wDwnZwYpF45b8A3ceXD5hmGg3GdHg==
+"@neongd/neo-provider@^0.0.2-alpha.15+6fae97f":
+  version "0.0.2-alpha.15"
+  resolved "https://registry.yarnpkg.com/@neongd/neo-provider/-/neo-provider-0.0.2-alpha.15.tgz#7a51dec69b51d582dcc78db9cc6a4f4a650c5e12"
+  integrity sha512-1sTU7eX9ixODZz+bUkMYwf053A6EUrBr5xw/TpSMw1BkTDRky42x40lJtHzFENvIJD2JZBDtoih8wyXKrvMxSg==
   dependencies:
-    "@neongd/json-rpc" "^0.0.2-alpha.13+7cf71c4"
+    "@neongd/json-rpc" "^0.0.2-alpha.15+6fae97f"
+    events "^3.3.0"
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -5068,6 +5070,11 @@ events@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/events/-/events-3.1.0.tgz#84279af1b34cb75aa88bf5ff291f6d0bd9b31a59"
   integrity sha512-Rv+u8MLHNOdMjTAFeT3nCjHn2aGlx435FP/sDHNaRhDEMwyI/aB22Kj2qIN8R0cw3z28psEQLYwxVKLsKrMgWg==
+
+events@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/events/-/events-3.3.0.tgz#31a95ad0a924e2d2c419a813aeb2c4e878ea7400"
+  integrity sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==
 
 eventsource@^1.0.7:
   version "1.0.7"
