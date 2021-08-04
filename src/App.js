@@ -12,7 +12,7 @@ function App() {
 
 
   async function getProvider() {
-    alert(JSON.stringify(await dapi.getProvider()));
+    alert(JSON.stringify(await dapi.wallet.getProvider()));
   }
 
   return dapi ? (
@@ -21,7 +21,7 @@ function App() {
     </div>
   ) : (
     <div>
-      Dapi Provider is not available.
+      Dapi Provider is not available1.
     </div>
   );
 }
