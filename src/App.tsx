@@ -13,8 +13,8 @@ function App() {
   const [dapi, setDapi] = useState<NeoDapi | null>(null);
 
   useEffect(() => {
-    const dapi = window.neo ? new NeoDapi(window.neo) : null;
     // const dapi = new NeoDapi('http://seed1t4.neo.org:20332');
+    const dapi = window.neo ? new NeoDapi(window.neo) : null;
     setDapi(dapi);
   }, []);
 
@@ -31,7 +31,8 @@ function App() {
   }
 
   async function getBlock() {
-    console.log(await dapi?.wallet.getBlock({ blockIndex: 0 }));
+    // console.log(await dapi?.node.getBlock(21373, true));
+    console.log(await dapi?.wallet.getBlock({ blockIndex: 21373 }));
   }
 
   return dapi ? (

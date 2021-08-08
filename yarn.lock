@@ -1718,52 +1718,52 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
-"@neongd/json-rpc@^0.0.5-alpha.4":
-  version "0.0.5-alpha.4"
-  resolved "https://registry.yarnpkg.com/@neongd/json-rpc/-/json-rpc-0.0.5-alpha.4.tgz#d4e58b3d5aed8b7a197b77c45b92fa32f98181c5"
-  integrity sha512-O/TuWcbNnRQkC8rSsBtXZ0dtzoOBMzaScrE8McKp0SoiUIPqT+w5r2cmuQsTBYwta5axidrNE437QRqjbL7sTg==
+"@neongd/json-rpc@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@neongd/json-rpc/-/json-rpc-0.0.6.tgz#4a21826fbac3893be278803c1e4d7b4d3e66d1de"
+  integrity sha512-I85kGkaJgsUKCqTmSNYBF+32tyyaIF0YJWpVpLaJGLy3tgvCavK/u5Jf1eDiOmKL4aMjG8ML5How0yQC3ToUhg==
   dependencies:
     axios "^0.21.1"
     events "^3.3.0"
     ws "^8.0.0"
 
-"@neongd/neo-dapi-fura@^0.0.5-alpha.4":
-  version "0.0.5-alpha.4"
-  resolved "https://registry.yarnpkg.com/@neongd/neo-dapi-fura/-/neo-dapi-fura-0.0.5-alpha.4.tgz#108ea2b2f24344595b2bd5b8819520b75b1fb420"
-  integrity sha512-djTMdj39G6OGXkB6B1+VZgErndUO34B8rbfnlQPU8tyb917fR832eGsoKNyfd0NmHFveljbDwv0KSl2hwNBVZQ==
+"@neongd/neo-dapi-fura@^0.0.7-alpha.6":
+  version "0.0.7-alpha.6"
+  resolved "https://registry.yarnpkg.com/@neongd/neo-dapi-fura/-/neo-dapi-fura-0.0.7-alpha.6.tgz#ea053f98f09bec3905ed440eda891305588e11ee"
+  integrity sha512-4WMl8nleA8pToiZKg9yZnwW8XokV6U7g6b7wHZnarW7LEDLFLIGNY2pshDEPVK/38fMZHBmFS/Hpjlwlf0byAQ==
   dependencies:
-    "@neongd/neo-provider" "^0.0.5-alpha.4"
+    "@neongd/neo-provider" "^0.0.6"
 
-"@neongd/neo-dapi-node@^0.0.5-alpha.4":
-  version "0.0.5-alpha.4"
-  resolved "https://registry.yarnpkg.com/@neongd/neo-dapi-node/-/neo-dapi-node-0.0.5-alpha.4.tgz#654ab6d1e4d1b29d712e1565cfb848d6c298fece"
-  integrity sha512-DYKb2fxiD4BAVNahuLHnISjXKd3mkouWx6ho0R4iB4O9LkidyhAUILD258gNewjcaiJi3jenaX7lm2PLXHRULw==
+"@neongd/neo-dapi-node@^0.0.7-alpha.4":
+  version "0.0.7-alpha.4"
+  resolved "https://registry.yarnpkg.com/@neongd/neo-dapi-node/-/neo-dapi-node-0.0.7-alpha.4.tgz#09e4c694598004b3e5787c7dfe1c6ed39a178fbd"
+  integrity sha512-Q5ctnvLoPd5Qyg7rc5qmQEm8L81QGFJ/D/YQ/8jCp/0+bvDb4hhUUwH0DcKHSIng6IeGy+75namoflIsd4RTyw==
   dependencies:
-    "@neongd/neo-provider" "^0.0.5-alpha.4"
+    "@neongd/neo-provider" "^0.0.6"
 
-"@neongd/neo-dapi-wallet@^0.0.5-alpha.5":
-  version "0.0.5-alpha.5"
-  resolved "https://registry.yarnpkg.com/@neongd/neo-dapi-wallet/-/neo-dapi-wallet-0.0.5-alpha.5.tgz#1532fd6c8ace81fab82dda4dc710f5a14f0ef081"
-  integrity sha512-BcnX6Usy+vEWKbqTFW6aZAYAbwk6k54Lur1W4NxJkkXu66+i5iwI0Ub7WxDEnZezmEfb8HfITb/FbHM0StsDkw==
+"@neongd/neo-dapi-wallet@^0.0.7-alpha.6":
+  version "0.0.7-alpha.6"
+  resolved "https://registry.yarnpkg.com/@neongd/neo-dapi-wallet/-/neo-dapi-wallet-0.0.7-alpha.6.tgz#04abd54b54bbfd24666f8357f75b0a509d6128f3"
+  integrity sha512-PanXxk9sXN8aAXX/vhmA2Zd3Wdj9zMuOvhhhdsJX8LuzGc0HVX1RpqS8otJtpkDCOqFCIiOEuw7ljWMja4TDYQ==
   dependencies:
-    "@neongd/neo-provider" "^0.0.5-alpha.4"
+    "@neongd/neo-provider" "^0.0.6"
 
-"@neongd/neo-dapi@^0.0.5-alpha.5":
-  version "0.0.5-alpha.5"
-  resolved "https://registry.yarnpkg.com/@neongd/neo-dapi/-/neo-dapi-0.0.5-alpha.5.tgz#70f518de3884fd1b898b15d63efd9eb7dbf37de8"
-  integrity sha512-K90AOtCxBjQ4Y6s71oI8g0SbQe83dr1qfdm5JpCRf36E1023BvqfMHJHIJoXDWkwclpLqNCqtAFQPvMbR5FwAA==
+"@neongd/neo-dapi@^0.0.7-alpha.3":
+  version "0.0.7-alpha.6"
+  resolved "https://registry.yarnpkg.com/@neongd/neo-dapi/-/neo-dapi-0.0.7-alpha.6.tgz#29388aae7a335e77c86d2a2682e88bcc60ab8139"
+  integrity sha512-ICzIzAlg1Grq36e2/PhnGsLgM97MX+LZvu0khnOPYa8rdYc6ProT5aRa1WkHmXSM4c69XIPqrk4+1Xvr4P+apg==
   dependencies:
-    "@neongd/neo-dapi-fura" "^0.0.5-alpha.4"
-    "@neongd/neo-dapi-node" "^0.0.5-alpha.4"
-    "@neongd/neo-dapi-wallet" "^0.0.5-alpha.5"
-    "@neongd/neo-provider" "^0.0.5-alpha.4"
+    "@neongd/neo-dapi-fura" "^0.0.7-alpha.6"
+    "@neongd/neo-dapi-node" "^0.0.7-alpha.4"
+    "@neongd/neo-dapi-wallet" "^0.0.7-alpha.6"
+    "@neongd/neo-provider" "^0.0.6"
 
-"@neongd/neo-provider@^0.0.5-alpha.4":
-  version "0.0.5-alpha.4"
-  resolved "https://registry.yarnpkg.com/@neongd/neo-provider/-/neo-provider-0.0.5-alpha.4.tgz#28ca44b9c438e9df9e032470a41e58a246f9ffb6"
-  integrity sha512-gR4oT5rBfQ9rbD+BB1U2yCxIJrSLdc1zVMFKnWzxApg7VPM1W2lBqBok7P8Fe+yLLaOMOG98Fat4vvrAn4eoOw==
+"@neongd/neo-provider@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@neongd/neo-provider/-/neo-provider-0.0.6.tgz#e8c4852d4927c677e4450cee4fa9993eea86348f"
+  integrity sha512-jsbUAilsxvV795fQMj+OIhcc/RBmyBlli4ohOy8PuJnKijf60RvhHOUDyBY+XakouNDHb7OmTB2uNnrABy9IPw==
   dependencies:
-    "@neongd/json-rpc" "^0.0.5-alpha.4"
+    "@neongd/json-rpc" "^0.0.6"
     events "^3.3.0"
 
 "@nodelib/fs.scandir@2.1.5":
