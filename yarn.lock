@@ -1734,28 +1734,28 @@
   dependencies:
     "@neongd/neo-provider" "^0.0.6"
 
-"@neongd/neo-dapi-node@^0.0.7-alpha.4":
-  version "0.0.7-alpha.4"
-  resolved "https://registry.yarnpkg.com/@neongd/neo-dapi-node/-/neo-dapi-node-0.0.7-alpha.4.tgz#09e4c694598004b3e5787c7dfe1c6ed39a178fbd"
-  integrity sha512-Q5ctnvLoPd5Qyg7rc5qmQEm8L81QGFJ/D/YQ/8jCp/0+bvDb4hhUUwH0DcKHSIng6IeGy+75namoflIsd4RTyw==
+"@neongd/neo-dapi-node@^0.0.7-alpha.7":
+  version "0.0.7-alpha.7"
+  resolved "https://registry.yarnpkg.com/@neongd/neo-dapi-node/-/neo-dapi-node-0.0.7-alpha.7.tgz#651291a28187784439bbe75eee6a28b865f9f192"
+  integrity sha512-QIM9TRnvNna6d4JkIWUhOxQGYaFxToydyewL+Dn2IGc8usv4NdwU6oqLkflOPtiQiAJaLUOPP+uvY9OJ6JaZvQ==
   dependencies:
     "@neongd/neo-provider" "^0.0.6"
 
-"@neongd/neo-dapi-wallet@^0.0.7-alpha.6":
-  version "0.0.7-alpha.6"
-  resolved "https://registry.yarnpkg.com/@neongd/neo-dapi-wallet/-/neo-dapi-wallet-0.0.7-alpha.6.tgz#04abd54b54bbfd24666f8357f75b0a509d6128f3"
-  integrity sha512-PanXxk9sXN8aAXX/vhmA2Zd3Wdj9zMuOvhhhdsJX8LuzGc0HVX1RpqS8otJtpkDCOqFCIiOEuw7ljWMja4TDYQ==
+"@neongd/neo-dapi-wallet@^0.0.7-alpha.8":
+  version "0.0.7-alpha.8"
+  resolved "https://registry.yarnpkg.com/@neongd/neo-dapi-wallet/-/neo-dapi-wallet-0.0.7-alpha.8.tgz#25b05d1d92d3675d8589874395d406393b498202"
+  integrity sha512-cAHR6AWiAUmVzEVfs68ISSi689vVN82EjskoLso4rle0llKU8I8O6N+YqFoh3y4Ld0gqkP2atn3SLuMhOmNYoQ==
   dependencies:
     "@neongd/neo-provider" "^0.0.6"
 
 "@neongd/neo-dapi@^0.0.7-alpha.3":
-  version "0.0.7-alpha.6"
-  resolved "https://registry.yarnpkg.com/@neongd/neo-dapi/-/neo-dapi-0.0.7-alpha.6.tgz#29388aae7a335e77c86d2a2682e88bcc60ab8139"
-  integrity sha512-ICzIzAlg1Grq36e2/PhnGsLgM97MX+LZvu0khnOPYa8rdYc6ProT5aRa1WkHmXSM4c69XIPqrk4+1Xvr4P+apg==
+  version "0.0.7-alpha.8"
+  resolved "https://registry.yarnpkg.com/@neongd/neo-dapi/-/neo-dapi-0.0.7-alpha.8.tgz#1af0c1e8df8003f099ec54bf9d34e89fd772d999"
+  integrity sha512-uv79+zAPiXcCsVkQiKahs9IMh0QzTUHWARvf3Mn1vO2Cne6rYwogFcJbARSw7GZR3Gdr5AA/iOkGjywrEuOm6g==
   dependencies:
     "@neongd/neo-dapi-fura" "^0.0.7-alpha.6"
-    "@neongd/neo-dapi-node" "^0.0.7-alpha.4"
-    "@neongd/neo-dapi-wallet" "^0.0.7-alpha.6"
+    "@neongd/neo-dapi-node" "^0.0.7-alpha.7"
+    "@neongd/neo-dapi-wallet" "^0.0.7-alpha.8"
     "@neongd/neo-provider" "^0.0.6"
 
 "@neongd/neo-provider@^0.0.6":
