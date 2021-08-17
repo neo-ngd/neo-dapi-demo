@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NeoDapi } from "@neongd/neo-dapi";
+import { INeoDapi, NodeNeoDapi, NeoDapi } from "@neongd/neo-dapi";
 import { INeoProvider } from "@neongd/neo-provider";
 import "./App.css";
 
@@ -10,53 +10,49 @@ interface WindowExtension {
 declare const window: Window & WindowExtension;
 
 function App() {
-  const [dapi, setDapi] = useState<NeoDapi | null>(null);
+  const [dapi, setDapi] = useState<INeoDapi | null>(null);
 
   useEffect(() => {
-    // const dapi = new NeoDapi("http://seed1.neo.org:10332");
+    // const dapi = new NodeNeoDapi("http://seed1.neo.org:10332");
     const dapi = window.neo ? new NeoDapi(window.neo) : null;
     setDapi(dapi);
   }, []);
 
   async function getProvider() {
-    console.log(await dapi?.wallet.getProvider());
+    console.log(await dapi?.getProvider());
   }
 
   async function getAccount() {
-    console.log(await dapi?.wallet.getAccount());
+    window.alert(JSON.stringify(await dapi?.getAccount()));
   }
 
   async function getPublicKey() {
-    console.log(await dapi?.wallet.getPublicKey());
+    console.log(await dapi?.getPublicKey());
   }
 
   async function getNetworks() {
-    console.log(await dapi?.wallet.getNetworks());
+    console.log(await dapi?.getNetworks());
   }
 
   async function getBlockCount() {
-    // console.log(await dapi?.node.getBlockCount());
-    console.log(await dapi?.wallet.getBlockCount({}));
+    console.log(await dapi?.getBlockCount({}));
   }
 
   async function getBlock() {
-    // console.log(await dapi?.node.getBlock(21373, true));
-    console.log(await dapi?.wallet.getBlock({ blockIndex: 21373 }));
+    console.log(await dapi?.getBlock({ blockIndex: 21373 }));
   }
 
   async function getApplicationLog() {
-    // console.log(await dapi?.node.getApplicationLog("0xc68aac4b0bb9e88bd42086c50cebe648ad28726d2849ff73faeb93985e510587"));
     console.log(
-      await dapi?.wallet.getApplicationLog({
+      await dapi?.getApplicationLog({
         txid: "0xc68aac4b0bb9e88bd42086c50cebe648ad28726d2849ff73faeb93985e510587",
       })
     );
   }
 
   async function getTransaction() {
-    // console.log(await dapi?.node.getRawTransaction("0xc68aac4b0bb9e88bd42086c50cebe648ad28726d2849ff73faeb93985e510587", true));
     console.log(
-      await dapi?.wallet.getTransaction({
+      await dapi?.getTransaction({
         txid: "0xc68aac4b0bb9e88bd42086c50cebe648ad28726d2849ff73faeb93985e510587",
       })
     );
@@ -64,7 +60,7 @@ function App() {
 
   async function invokeRead() {
     console.log(
-      await dapi?.wallet.invokeRead({
+      await dapi?.invokeRead({
         scriptHash: "0xef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
         operation: "balanceOf",
         args: [
@@ -80,7 +76,7 @@ function App() {
 
   async function invokeReadMulti() {
     console.log(
-      await dapi?.wallet.invokeReadMulti({
+      await dapi?.invokeReadMulti({
         invokeArgs: [
           {
             scriptHash: "0xef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
@@ -103,14 +99,13 @@ function App() {
             ],
           },
         ],
-        network: "TestNet",
       })
     );
   }
 
   async function getBalance() {
     console.log(
-      await dapi?.wallet.getBalance({
+      await dapi?.getBalance({
         address: "NLP5mHikEuxyPCFqMCBHeP1YDyYPwCKBFu",
         assetHashes: [
           "0xef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
