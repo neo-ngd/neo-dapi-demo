@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { INeoDapi, NodeNeoDapi, NeoDapi } from "@neongd/neo-dapi";
+import { INeoDapi, NeoDapi } from "@neongd/neo-dapi";
 import { INeoProvider } from "@neongd/neo-provider";
 import "./App.css";
 
@@ -13,7 +13,6 @@ function App() {
   const [dapi, setDapi] = useState<INeoDapi | null>(null);
 
   useEffect(() => {
-    // const dapi = new NodeNeoDapi("http://seed1.neo.org:10332");
     const dapi = window.neo ? new NeoDapi(window.neo) : null;
     setDapi(dapi);
   }, []);
