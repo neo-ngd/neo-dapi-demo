@@ -129,7 +129,7 @@ function App() {
       <button onClick={getBalance}>getBalance</button>
     </div>
   ) : (
-    <div>Dapi Provider is not available.</div>
+    <div>Dapi Provider is not available1.</div>
   );
 }
 
