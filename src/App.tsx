@@ -98,6 +98,53 @@ function App() {
             ],
           },
         ],
+        network: "TestNet",
+      })
+    );
+  }
+
+  async function invoke() {
+    console.log(
+      await dapi?.invoke({
+        scriptHash: "0xef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
+        operation: "balanceOf",
+        args: [
+          {
+            type: "Hash160",
+            value: "0x6835f6961eadbad3e75f2ea2f7a52d04deb82005",
+          },
+        ],
+        network: "TestNet",
+      })
+    );
+  }
+
+  async function invokeMulti() {
+    console.log(
+      await dapi?.invokeMulti({
+        invokeArgs: [
+          {
+            scriptHash: "0xef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
+            operation: "balanceOf",
+            args: [
+              {
+                type: "Hash160",
+                value: "0x6835f6961eadbad3e75f2ea2f7a52d04deb82005",
+              },
+            ],
+          },
+          {
+            scriptHash: "0xd2a4cff31913016155e38e474a2c06d08be276cf",
+            operation: "balanceOf",
+            args: [
+              {
+                type: "Hash160",
+                value: "0x6835f6961eadbad3e75f2ea2f7a52d04deb82005",
+              },
+            ],
+          },
+        ],
+        network: "TestNet",
       })
     );
   }
@@ -126,6 +173,8 @@ function App() {
       <button onClick={getTransaction}>getTransaction</button>
       <button onClick={invokeRead}>invokeRead</button>
       <button onClick={invokeReadMulti}>invokeReadMulti</button>
+      <button onClick={invoke}>invoke</button>
+      <button onClick={invokeMulti}>invokeMulti</button>
       <button onClick={getBalance}>getBalance</button>
     </div>
   ) : (
