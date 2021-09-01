@@ -111,7 +111,7 @@ function App() {
         args: [
           {
             type: "Hash160",
-            value: "0x6835f6961eadbad3e75f2ea2f7a52d04deb82005",
+            value: "0x96d5942028891de8e5d866f504b36ff5ae13ab63",
           },
         ],
         network: "TestNet",
