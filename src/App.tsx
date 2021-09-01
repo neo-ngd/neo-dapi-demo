@@ -106,13 +106,25 @@ function App() {
   async function invoke() {
     console.log(
       await dapi?.invoke({
-        scriptHash: "0xef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
-        operation: "balanceOf",
+        scriptHash: "0xd2a4cff31913016155e38e474a2c06d08be276cf",
+        operation: "transfer",
         args: [
           {
             type: "Hash160",
-            value: "0x96d5942028891de8e5d866f504b36ff5ae13ab63",
+            value: "0x96d5942028891de8e5d866f504b36ff5ae13ab63"
           },
+          {
+            type: "Hash160",
+            value: "0x69ee19eba1d8f7b43ad64aeaafb64c2939c9baad"
+          },
+          {
+            type: "Integer",
+            value: "10"
+          },
+          {
+            type: "String",
+            value: ""
+          }
         ],
         network: "TestNet",
       })
