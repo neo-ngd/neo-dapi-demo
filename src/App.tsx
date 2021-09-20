@@ -110,8 +110,8 @@ function App() {
         operation: "bidToken",
         args: [
           {
-            "type": "Address",
-            "value": "NWVJwypdmKMjcpCntGQ3GEx1e43aZuUXLZ"
+            "type": "Hash160",
+            "value": "0x1e3500ff4d0fe70b046c990787153fe9417bff73"
           },
           {
             "type": "ByteArray",
