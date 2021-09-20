@@ -106,7 +106,7 @@ function App() {
   async function invoke() {
     console.log(
       await dapi?.invoke({
-        scriptHash: "0xd2a4cff31913016155e38e474a2c06d08be276cf",
+        scriptHash: "0xcc638d55d99fc81295daccbaf722b84f179fb9c4",
         operation: "bidToken",
         args: [
           {
