@@ -107,23 +107,19 @@ function App() {
     console.log(
       await dapi?.invoke({
         scriptHash: "0xd2a4cff31913016155e38e474a2c06d08be276cf",
-        operation: "transfer",
+        operation: "bidToken",
         args: [
           {
-            type: "Hash160",
-            value: "0x96d5942028891de8e5d866f504b36ff5ae13ab63"
+            "type": "Address",
+            "value": "NWVJwypdmKMjcpCntGQ3GEx1e43aZuUXLZ"
           },
           {
-            type: "Hash160",
-            value: "0x69ee19eba1d8f7b43ad64aeaafb64c2939c9baad"
+            "type": "ByteArray",
+            "value": "UA=="
           },
           {
-            type: "Integer",
-            value: "10"
-          },
-          {
-            type: "String",
-            value: ""
+            "type": "Integer",
+            "value": "150000000"
           }
         ],
         network: "TestNet",
