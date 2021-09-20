@@ -111,7 +111,7 @@ function App() {
         args: [
           {
             "type": "Hash160",
-            "value": "0x1e3500ff4d0fe70b046c990787153fe9417bff73"
+            "value": "0x96d5942028891de8e5d866f504b36ff5ae13ab63"
           },
           {
             "type": "ByteArray",
