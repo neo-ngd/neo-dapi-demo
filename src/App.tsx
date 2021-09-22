@@ -122,6 +122,19 @@ function App() {
             "value": "150000000"
           }
         ],
+        "fee": "0",
+        "broadcastOverride": false,
+        "signers": [
+          {
+            "account": "0x96d5942028891de8e5d866f504b36ff5ae13ab63",
+            "scopes": "16",
+            "allowedContracts": [
+              "cc638d55d99fc81295daccbaf722b84f179fb9c4",
+              "577a51f7d39162c9de1db12a6b319c848e4c54e5",
+              "d2a4cff31913016155e38e474a2c06d08be276cf"
+            ]
+          }
+        ],
         network: "TestNet",
       })
     );
