@@ -106,7 +106,7 @@ function App() {
   async function invoke() {
     console.log(
       await dapi?.invoke({
-        scriptHash: "0xcc638d55d99fc81295daccbaf722b84f179fb9c4",
+        scriptHash: "0x590635eaf2364ba03dade7ed9a54efa20d72eba9",
         operation: "bidToken",
         args: [
           {
@@ -129,7 +129,7 @@ function App() {
             "account": "0x96d5942028891de8e5d866f504b36ff5ae13ab63",
             "scopes": "16",
             "allowedContracts": [
-              "cc638d55d99fc81295daccbaf722b84f179fb9c4",
+              "590635eaf2364ba03dade7ed9a54efa20d72eba9",
               "577a51f7d39162c9de1db12a6b319c848e4c54e5",
               "d2a4cff31913016155e38e474a2c06d08be276cf"
             ]
