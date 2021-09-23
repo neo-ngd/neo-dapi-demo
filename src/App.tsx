@@ -115,11 +115,11 @@ function App() {
           },
           {
             "type": "ByteArray",
-            "value": "UA=="
+            "value": "TA=="
           },
           {
             "type": "Integer",
-            "value": "150000000"
+            "value": "100000000"
           }
         ],
         "fee": "1100000",
