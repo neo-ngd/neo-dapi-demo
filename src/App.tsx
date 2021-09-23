@@ -122,7 +122,7 @@ function App() {
             "value": "150000000"
           }
         ],
-        "fee": "0",
+        "fee": "1100000",
         "broadcastOverride": false,
         "signers": [
           {
