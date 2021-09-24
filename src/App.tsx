@@ -115,7 +115,7 @@ function App() {
           },
           {
             "type": "ByteArray",
-            "value": "FA=="
+            "value": "TA=="
           },
           {
             "type": "Integer",
