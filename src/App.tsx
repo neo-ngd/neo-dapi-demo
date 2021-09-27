@@ -115,14 +115,14 @@ function App() {
           },
           {
             "type": "ByteArray",
-            "value": "TA=="
+            "value": "Uw=="
           },
           {
             "type": "Integer",
-            "value": "100000000"
+            "value": "1"
           }
         ],
-        "fee": "1100000",
+        "fee": "0",
         "broadcastOverride": false,
         "signers": [
           {
@@ -130,8 +130,8 @@ function App() {
             "scopes": "16",
             "allowedContracts": [
               "590635eaf2364ba03dade7ed9a54efa20d72eba9",
-              "577a51f7d39162c9de1db12a6b319c848e4c54e5",
-              "d2a4cff31913016155e38e474a2c06d08be276cf"
+              "b137c83610d3f0331a48d8d6283864120b4f23a1",
+              "ef4073a0f2b305a38ec4050e4d3d28bc40ea63f5"
             ]
           }
         ],
