@@ -170,9 +170,9 @@ function App() {
     );
   }
 
-  async function getBalance() {
+  async function getNep17Balances() {
     console.log(
-      await dapi?.getBalance({
+      await dapi?.getNep17Balances({
         address: "NLP5mHikEuxyPCFqMCBHeP1YDyYPwCKBFu",
         assetHashes: [
           "0xef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
@@ -196,7 +196,7 @@ function App() {
       <button onClick={invokeReadMulti}>invokeReadMulti</button>
       <button onClick={invoke}>invoke</button>
       <button onClick={invokeMulti}>invokeMulti</button>
-      <button onClick={getBalance}>getBalance</button>
+      <button onClick={getNep17Balances}>getNep17Balances</button>
     </div>
   ) : (
     <div>Dapi Provider is not available.</div>
