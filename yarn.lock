@@ -1512,10 +1512,10 @@
     utf-8-validate "^5.0.5"
     ws "^8.2.2"
 
-"@neongd/neo-dapi@^0.0.9":
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/@neongd/neo-dapi/-/neo-dapi-0.0.9.tgz#3ca4b0b70c11039b22fc4df9806b883f82cf27a4"
-  integrity sha512-ioWaR1eioGW4Yb/PDDHfeFZw3c+UlJkYbYuB96FD1u9QaPv8FROmAos2lNuilJSp4xPTXt9qExmJ2pY7ySINlQ==
+"@neongd/neo-dapi@0.0.10-alpha.4":
+  version "0.0.10-alpha.4"
+  resolved "https://registry.yarnpkg.com/@neongd/neo-dapi/-/neo-dapi-0.0.10-alpha.4.tgz#95edb9062a85305fea20dcbe5dcc508d61ed0626"
+  integrity sha512-TbUcHLmuap7v/u/7L8tjc9/A51bo1QfDSfBwz8fr89w2xUdp5b8qL7iQX8gk1W5hmn/4QMaeD+kgWcIgkttBVg==
   dependencies:
     "@cityofzion/neon-js" "^5.0.0-next.13"
     "@neongd/neo-provider" "^0.0.9"
