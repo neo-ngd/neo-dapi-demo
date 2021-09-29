@@ -1,13 +1,6 @@
 import { useEffect, useState } from "react";
 import { INeoDapi, NeoDapi } from "@neongd/neo-dapi";
-import { INeoProvider } from "@neongd/neo-provider";
 import "./App.css";
-
-interface WindowExtension {
-  neo?: INeoProvider;
-}
-
-declare const window: Window & WindowExtension;
 
 function App() {
   const [dapi, setDapi] = useState<INeoDapi | null>(null);
