@@ -103,30 +103,30 @@ function App() {
         operation: "bidToken",
         args: [
           {
-            "type": "Hash160",
-            "value": "0x96d5942028891de8e5d866f504b36ff5ae13ab63"
+            type: "Hash160",
+            value: "0x96d5942028891de8e5d866f504b36ff5ae13ab63",
           },
           {
-            "type": "ByteArray",
-            "value": "Uw=="
+            type: "ByteArray",
+            value: "Uw==",
           },
           {
-            "type": "Integer",
-            "value": "1"
-          }
+            type: "Integer",
+            value: "1",
+          },
         ],
-        "fee": "0",
-        "broadcastOverride": false,
-        "signers": [
+        extraNetworkFee: "0",
+        broadcastOverride: false,
+        signers: [
           {
-            "account": "0x96d5942028891de8e5d866f504b36ff5ae13ab63",
-            "scopes": "CustomContracts",
-            "allowedContracts": [
+            account: "0x96d5942028891de8e5d866f504b36ff5ae13ab63",
+            scopes: "CustomContracts",
+            allowedContracts: [
               "590635eaf2364ba03dade7ed9a54efa20d72eba9",
               "b137c83610d3f0331a48d8d6283864120b4f23a1",
-              "ef4073a0f2b305a38ec4050e4d3d28bc40ea63f5"
-            ]
-          }
+              "ef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
+            ],
+          },
         ],
         network: "TestNet",
       })
