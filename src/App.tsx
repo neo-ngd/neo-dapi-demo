@@ -111,8 +111,8 @@ function App() {
             value: "RnJhZ21lbnQgRyAyMzU2",
           },
           {
-            type: "String",
-            value: "",
+            type: "Any",
+            value: null,
           },
         ],
         extraSystemFee: "100",
