@@ -99,33 +99,34 @@ function App() {
   async function invoke() {
     console.log(
       await dapi?.invoke({
-        scriptHash: "0x590635eaf2364ba03dade7ed9a54efa20d72eba9",
-        operation: "bidToken",
+        scriptHash: "0x2bcc9c9ad6626396f507f088c5ae06ebf6fa5efa",
+        operation: "transfer",
         args: [
           {
             type: "Hash160",
-            value: "0x96d5942028891de8e5d866f504b36ff5ae13ab63",
+            value: "0x69ee19eba1d8f7b43ad64aeaafb64c2939c9baad",
           },
           {
             type: "ByteArray",
-            value: "Uw==",
+            value: "RnJhZ21lbnQgRyAyMzU2",
           },
           {
-            type: "Integer",
-            value: "1",
+            type: "String",
+            value: "",
           },
         ],
-        extraNetworkFee: "0",
+        extraSystemFee: "100",
+        extraNetworkFee: "10000",
         broadcastOverride: false,
         signers: [
           {
             account: "0x96d5942028891de8e5d866f504b36ff5ae13ab63",
-            scopes: "CustomContracts",
-            allowedContracts: [
-              "590635eaf2364ba03dade7ed9a54efa20d72eba9",
-              "b137c83610d3f0331a48d8d6283864120b4f23a1",
-              "ef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
-            ],
+            scopes: "1",
+            // allowedContracts: [
+            //   "590635eaf2364ba03dade7ed9a54efa20d72eba9",
+            //   "b137c83610d3f0331a48d8d6283864120b4f23a1",
+            //   "ef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
+            // ],
           },
         ],
         network: "TestNet",
