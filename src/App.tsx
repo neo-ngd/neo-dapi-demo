@@ -121,11 +121,11 @@ function App() {
         signers: [
           {
             account: "0x96d5942028891de8e5d866f504b36ff5ae13ab63",
-            scopes: "CalledByEntry,CustomContracts",
-            allowedContracts: [
-              "2bcc9c9ad6626396f507f088c5ae06ebf6fa5efa",
-              "ef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
-            ],
+            scopes: "CalledByEntry",
+            // allowedContracts: [
+            //   "2bcc9c9ad6626396f507f088c5ae06ebf6fa5efa",
+            //   "ef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
+            // ],
           },
         ],
         network: "TestNet",
