@@ -18,10 +18,6 @@ function App() {
     window.alert(JSON.stringify(await dapi?.getAccount()));
   }
 
-  async function getPublicKey() {
-    console.log(await dapi?.getPublicKey());
-  }
-
   async function getNetworks() {
     console.log(await dapi?.getNetworks());
   }
@@ -69,7 +65,7 @@ function App() {
   async function invokeReadMulti() {
     console.log(
       await dapi?.invokeReadMulti({
-        invokeArgs: [
+        invocations: [
           {
             scriptHash: "0xef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
             operation: "balanceOf",
@@ -136,7 +132,7 @@ function App() {
   async function invokeMulti() {
     console.log(
       await dapi?.invokeMulti({
-        invokeArgs: [
+        invocations: [
           {
             scriptHash: "0xef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
             operation: "balanceOf",
@@ -180,7 +176,6 @@ function App() {
       <button onClick={getProvider}>getProvider</button>
       <button onClick={getAccount}>getAccount</button>
       <button onClick={getNetworks}>getNetworks</button>
-      <button onClick={getPublicKey}>getPublicKey</button>
       <button onClick={getBlockCount}>getBlockCount</button>
       <button onClick={getBlock}>getBlock</button>
       <button onClick={getApplicationLog}>getApplicationLog</button>
