@@ -115,8 +115,8 @@ function App() {
             value: null,
           },
         ],
-        extraSystemFee: "100",
-        extraNetworkFee: "10000",
+        extraSystemFee: "1.12",
+        extraNetworkFee: "0.022",
         broadcastOverride: false,
         signers: [
           {
