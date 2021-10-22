@@ -11,7 +11,7 @@ function App() {
   }, []);
 
   async function getProvider() {
-    console.log(await dapi?.getProvider());
+    window.alert(JSON.stringify(await dapi?.getProvider()));
   }
 
   async function getAccount() {
@@ -19,7 +19,7 @@ function App() {
   }
 
   async function getNetworks() {
-    console.log(await dapi?.getNetworks());
+    window.alert(JSON.stringify(await dapi?.getNetworks()));
   }
 
   async function getBlockCount() {
