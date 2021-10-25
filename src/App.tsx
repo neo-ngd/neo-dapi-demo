@@ -139,18 +139,43 @@ function App() {
             args: [
               {
                 type: "Hash160",
-                value: "0x6835f6961eadbad3e75f2ea2f7a52d04deb82005",
+                value: "0x96d5942028891de8e5d866f504b36ff5ae13ab63",
               },
             ],
           },
           {
             scriptHash: "0xd2a4cff31913016155e38e474a2c06d08be276cf",
-            operation: "balanceOf",
+            operation: "transfer",
             args: [
               {
                 type: "Hash160",
-                value: "0x6835f6961eadbad3e75f2ea2f7a52d04deb82005",
+                value: "0x96d5942028891de8e5d866f504b36ff5ae13ab63",
               },
+              {
+                type: "Hash160",
+                value: "0x69ee19eba1d8f7b43ad64aeaafb64c2939c9baad",
+              },
+              {
+                type: "Integer",
+                value: "12300000",
+              },
+              {
+                type: "Any",
+                value: null,
+              },
+            ],
+          },
+        ],
+        extraSystemFee: "1",
+        extraNetworkFee: "0.001",
+        broadcastOverride: false,
+        signers: [
+          {
+            account: "96d5942028891de8e5d866f504b36ff5ae13ab63",
+            scopes: "CalledByEntry",
+            allowedContracts: [
+              "0xef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
+              "d2a4cff31913016155e38e474a2c06d08be276cf",
             ],
           },
         ],
