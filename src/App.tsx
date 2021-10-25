@@ -95,12 +95,12 @@ function App() {
   async function invoke() {
     console.log(
       await dapi?.invoke({
-        scriptHash: "0x2bcc9c9ad6626396f507f088c5ae06ebf6fa5efa",
+        scriptHash: "2bcc9c9ad6626396f507f088c5ae06ebf6fa5efa",
         operation: "transfer",
         args: [
           {
             type: "Hash160",
-            value: "0x69ee19eba1d8f7b43ad64aeaafb64c2939c9baad",
+            value: "69ee19eba1d8f7b43ad64aeaafb64c2939c9baad",
           },
           {
             type: "ByteArray",
@@ -116,7 +116,7 @@ function App() {
         broadcastOverride: false,
         signers: [
           {
-            account: "0x96d5942028891de8e5d866f504b36ff5ae13ab63",
+            account: "96d5942028891de8e5d866f504b36ff5ae13ab63",
             scopes: "CalledByEntry",
             // allowedContracts: [
             //   "2bcc9c9ad6626396f507f088c5ae06ebf6fa5efa",
