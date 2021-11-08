@@ -1501,10 +1501,10 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
-"@neongd/json-rpc@^0.0.14":
-  version "0.0.14"
-  resolved "https://registry.yarnpkg.com/@neongd/json-rpc/-/json-rpc-0.0.14.tgz#2abe658d0039ee69340b64d0f4d88586aed003c0"
-  integrity sha512-NdDgz6Lv/hwgSVweQZuwAHdX+fjZcSnUA7r0uQfD2/07577SSkM/5L4/4G2TjJtEofK2PqxffMUZW/iGszOBag==
+"@neongd/json-rpc@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@neongd/json-rpc/-/json-rpc-1.0.0.tgz#dfccfdf7db3c3920fb18e2647408d090b4f6e397"
+  integrity sha512-kXtt7lhvvTkSFVZeISbV6kFeMYyA3fx2jhEdWMZIR3QdteoWbYPKAyoKumA07aStlK/P2f6se3OFC+7DPLi1nw==
   dependencies:
     axios "^0.21.1"
     bufferutil "^4.0.3"
@@ -1512,21 +1512,21 @@
     utf-8-validate "^5.0.5"
     ws "^8.2.2"
 
-"@neongd/neo-dapi@0.0.14":
-  version "0.0.14"
-  resolved "https://registry.yarnpkg.com/@neongd/neo-dapi/-/neo-dapi-0.0.14.tgz#bd4311ac4c3120ca978a6197f00494d85664abe1"
-  integrity sha512-yyDMVyr5v4/iXhFeu/oSlPRPfI1x6YI+MmmvuXEaFSdzIUgijn2Wim6uqnnUbOqJf04yYdSS4T+yz1GPVPfw4g==
+"@neongd/neo-dapi@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@neongd/neo-dapi/-/neo-dapi-1.0.0.tgz#834643079985f2fe5e17402ae02735db350b9103"
+  integrity sha512-O3zfcQ4zhA1c0+tO7dw7AolEg2XtwKSn7x2W7ZnWNIqQoznZ4t372q2FjlkxVWtNtXeve+VUoVG3Yllj/b76Kw==
   dependencies:
     "@cityofzion/neon-js" "^5.0.0-next.13"
-    "@neongd/json-rpc" "^0.0.14"
-    "@neongd/neo-provider" "^0.0.14"
+    "@neongd/json-rpc" "^1.0.0"
+    "@neongd/neo-provider" "^1.0.0"
 
-"@neongd/neo-provider@^0.0.14":
-  version "0.0.14"
-  resolved "https://registry.yarnpkg.com/@neongd/neo-provider/-/neo-provider-0.0.14.tgz#a8719ea5fc4190dfdf26489dabea8177f1572534"
-  integrity sha512-+ZCgRfTJd7MM24XhlezroJ7/bSOmHnKqg6AOEGcw1CcH5lS8aY50sFPvuIXDCeW2ViVSNB4bK29IKpw2+gdNdQ==
+"@neongd/neo-provider@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@neongd/neo-provider/-/neo-provider-1.0.0.tgz#8f8d0c19e3003b2f5fb926ab3b1b7f51208070d6"
+  integrity sha512-UzzczVZQg88KwTFHiCa7I52J2T5Fjt0H03S7WoMljOdttZv0PLN82K+R5d1mrHGWaDKe5O0Fl/HbmGcv4vevHA==
   dependencies:
-    "@neongd/json-rpc" "^0.0.14"
+    "@neongd/json-rpc" "^1.0.0"
     events "^3.3.0"
 
 "@nodelib/fs.scandir@2.1.5":
