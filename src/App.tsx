@@ -6,7 +6,7 @@ function App() {
   const [dapi, setDapi] = useState<INeoDapi | null>(null);
 
   useEffect(() => {
-    const dapi = window.neo ? new NeoDapi(window.neo) : null;
+    const dapi = window.neo ? new NeoDapi(window.neo) : window.OneGate ? new NeoDapi(window.OneGate) : null;
     setDapi(dapi);
   }, []);
 
