@@ -5,12 +5,15 @@ import "./App.css";
 function App() {
   const [dapi, setDapi] = useState<INeoDapi | null>(null);
 
-  useEffect(() => {
-    console.log('App init');
-    console.log(window.neo)
-    console.log(window.OneGate)
+  const loadDapi = () => {
     const dapi = window.neo ? new NeoDapi(window.neo) : window.OneGate ? new NeoDapi(window.OneGate) : null;
     setDapi(dapi);
+  }
+
+  useEffect(() => {
+    loadDapi();
+    window.addEventListener('focus', loadDapi);
+    return () => window.removeEventListener('focus', loadDapi);
   }, []);
 
   async function getProvider() {
