@@ -1,22 +1,54 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { INeoDapi, NeoDapi } from "@neongd/neo-dapi";
 import "./App.css";
 
 function App() {
   const [dapi, setDapi] = useState<INeoDapi | null>(null);
 
-  const loadDapi = () => {
+  const loadDapi = useCallback(() => {
     if (!dapi) {
       const dapi = window.neo ? new NeoDapi(window.neo) : window.OneGate ? new NeoDapi(window.OneGate) : null;
       setDapi(dapi);
     }
+  },[dapi]);
+
+  function onAccountChanged(account: string) {
+    window.alert('onAccountChanged. new account: '+ account);
   }
+
+  function onNetworkChanged(network: string) {
+    window.alert('onNetworkChanged. new network: '+ network);
+  }
+
+  const addListeners = useCallback(()=> {
+    window.addEventListener('focus', loadDapi);
+    if (window.neo) {
+      window.neo.on('accountChanged', onAccountChanged);
+      window.neo.on('networkChanged', onNetworkChanged);
+    }
+    if (window.OneGate) {
+      window.OneGate.on('accountChanged', onAccountChanged);
+      window.OneGate.on('networkChanged', onNetworkChanged);
+    }
+  },[loadDapi]);
+
+  const removeListeners = useCallback(()=> {
+    window.removeEventListener('focus', loadDapi);
+    if (window.neo) {
+      window.neo.removeListener('accountChanged', onAccountChanged);
+      window.neo.removeListener('networkChanged', onNetworkChanged);
+    }
+    if (window.OneGate) {
+      window.OneGate.removeListener('accountChanged', onAccountChanged);
+      window.OneGate.removeListener('networkChanged', onNetworkChanged);
+    }
+  },[loadDapi]);
 
   useEffect(() => {
     loadDapi();
-    window.addEventListener('focus', loadDapi);
-    return () => window.removeEventListener('focus', loadDapi);
-  }, []);
+    addListeners();
+    return () => removeListeners();
+  }, [loadDapi, addListeners, removeListeners]);
 
   async function getProvider() {
     window.alert(JSON.stringify(await dapi?.getProvider()));
