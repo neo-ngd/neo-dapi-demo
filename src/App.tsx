@@ -7,7 +7,13 @@ function App() {
 
   const loadDapi = useCallback(() => {
     if (!dapi) {
-      const dapi = window.neo ? new NeoDapi(window.neo) : window.OneGate ? new NeoDapi(window.OneGate) : null;
+      const dapi = window.neo 
+        ? new NeoDapi(window.neo) 
+        : window.OneGate 
+          ? new NeoDapi(window.OneGate) 
+          : window.Vital 
+            ? new NeoDapi(window.Vital) 
+            : null;
       setDapi(dapi);
     }
   },[dapi]);
@@ -21,7 +27,7 @@ function App() {
   }
 
   const addListeners = useCallback(()=> {
-    window.addEventListener('focus', loadDapi);
+    window.addEventListener('Vital.NEO.EVENT.READY', loadDapi);
     if (window.neo) {
       window.neo.on('accountChanged', onAccountChanged);
       window.neo.on('networkChanged', onNetworkChanged);
@@ -30,10 +36,14 @@ function App() {
       window.OneGate.on('accountChanged', onAccountChanged);
       window.OneGate.on('networkChanged', onNetworkChanged);
     }
+    if (window.Vital) {
+      window.Vital.on('accountChanged', onAccountChanged);
+      window.Vital.on('networkChanged', onNetworkChanged);
+    }
   },[loadDapi]);
 
   const removeListeners = useCallback(()=> {
-    window.removeEventListener('focus', loadDapi);
+    window.removeEventListener('Vital.NEO.EVENT.READY', loadDapi);
     if (window.neo) {
       window.neo.removeListener('accountChanged', onAccountChanged);
       window.neo.removeListener('networkChanged', onNetworkChanged);
@@ -41,6 +51,10 @@ function App() {
     if (window.OneGate) {
       window.OneGate.removeListener('accountChanged', onAccountChanged);
       window.OneGate.removeListener('networkChanged', onNetworkChanged);
+    }
+    if (window.Vital) {
+      window.Vital.removeListener('accountChanged', onAccountChanged);
+      window.Vital.removeListener('networkChanged', onNetworkChanged);
     }
   },[loadDapi]);
 

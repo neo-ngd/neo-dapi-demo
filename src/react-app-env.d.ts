@@ -6,5 +6,6 @@ declare global {
   interface Window {
     neo?: INeoProvider;
     OneGate?: INeoProvider;
+    Vital?: INeoProvider;
   }
 }
