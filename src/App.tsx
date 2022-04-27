@@ -233,7 +233,7 @@ function App() {
             ],
           },
         ],
-        network: "TestNet",
+        network: "N3T5",
       })
     );
   }
