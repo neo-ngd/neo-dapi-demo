@@ -250,6 +250,14 @@ function App() {
     );
   }
 
+  async function signMessage() {
+    window.alert(JSON.stringify(
+      await dapi?.signMessage({
+        message: "Hello World!",
+      })
+    ));
+  }
+
   return dapi ? (
     <div>
       <button onClick={getProvider}>getProvider</button>
@@ -264,6 +272,7 @@ function App() {
       <button onClick={invoke}>invoke</button>
       <button onClick={invokeMulti}>invokeMulti</button>
       <button onClick={getNep17Balances}>getNep17Balances</button>
+      <button onClick={signMessage}>signMessage</button>
     </div>
   ) : (
     <div>Dapi Provider is not available.</div>
