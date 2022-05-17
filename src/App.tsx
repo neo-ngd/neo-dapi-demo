@@ -311,7 +311,7 @@ function App() {
             ],
           },
         ],
-        network: "N3T5",
+        network: "N3T4",
       })
     ));
   }
