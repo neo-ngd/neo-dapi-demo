@@ -261,8 +261,8 @@ function App() {
   async function signTransaction() {
     window.alert(JSON.stringify(
       await dapi?.signTransaction({
-        version: 0,
-        nonce: 0,
+        version: 2,
+        nonce: 11,
         invocations: [
           {
             scriptHash: "0xef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
@@ -319,8 +319,8 @@ function App() {
   async function signTransactionTestNet() {
     window.alert(JSON.stringify(
       await dapi?.signTransaction({
-        version: 0,
-        nonce: 0,
+        version: 2,
+        nonce: 12,
         invocations: [
           {
             scriptHash: "0xef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
