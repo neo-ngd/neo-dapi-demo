@@ -316,6 +316,64 @@ function App() {
     ));
   }
 
+  async function signTransactionTestNet() {
+    window.alert(JSON.stringify(
+      await dapi?.signTransaction({
+        version: 0,
+        nonce: 0,
+        invocations: [
+          {
+            scriptHash: "0xef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
+            operation: "balanceOf",
+            args: [
+              {
+                type: "Hash160",
+                value: "0x96d5942028891de8e5d866f504b36ff5ae13ab63",
+              },
+            ],
+          },
+          {
+            scriptHash: "0xd2a4cff31913016155e38e474a2c06d08be276cf",
+            operation: "transfer",
+            args: [
+              {
+                type: "Hash160",
+                value: "0x96d5942028891de8e5d866f504b36ff5ae13ab63",
+              },
+              {
+                type: "Hash160",
+                value: "0x69ee19eba1d8f7b43ad64aeaafb64c2939c9baad",
+              },
+              {
+                type: "Integer",
+                value: "12300000",
+              },
+              {
+                type: "Any",
+                value: null,
+              },
+            ],
+          },
+        ],
+        systemFee: "234234",
+        networkFee: "123123",
+        validUntilBlock: "9999999",
+        script: "0c1463ab13aef56fb304f566d8e5e81d89282094d59611c01f0c0962616c616e63654f660c14f563ea40bc283d4d0e05c48ea305b3f2a07340ef41627d5b520b02e0aebb000c14adbac939294cb6afea4ad63ab4f7d8a1eb19ee690c1463ab13aef56fb304f566d8e5e81d89282094d59614c01f0c087472616e736665720c14cf76e28bd0062c4a478ee35561011319f3cfa4d241627d5b52",
+        signers: [
+          {
+            account: "96d5942028891de8e5d866f504b36ff5ae13ab63",
+            scopes: "CalledByEntry",
+            allowedContracts: [
+              "0xef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
+              "d2a4cff31913016155e38e474a2c06d08be276cf",
+            ],
+          },
+        ],
+        network: "TestNet",
+      })
+    ));
+  }
+
   return dapi ? (
     <div>
       <button onClick={getProvider}>getProvider</button>
@@ -332,6 +390,7 @@ function App() {
       <button onClick={getNep17Balances}>getNep17Balances</button>
       <button onClick={signMessage}>signMessage</button>
       <button onClick={signTransaction}>signTransaction</button>
+      <button onClick={signTransactionTestNet}>signTransaction-TestNet</button>
     </div>
   ) : (
     <div>Dapi Provider is not available.</div>
