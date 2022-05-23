@@ -328,11 +328,11 @@ function App() {
         "signers": [
             {
                 "account": "708650519706302751a7926f3ece7600b1c67e4a",
-                "scopes": '1',
+                "scopes": "CalledByEntry",
             },
             {
                 "account": "7ecab3e40d83bed2a8f5457c2d20df50379b6a86",
-                "scopes": '1',
+                "scopes": "CalledByEntry",
             }
         ],
         "invocations": [
