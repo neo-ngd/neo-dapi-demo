@@ -319,57 +319,38 @@ function App() {
   async function signTransactionTestNet() {
     window.alert(JSON.stringify(
       await dapi?.signTransaction({
-        version: 2,
-        nonce: 12,
-        invocations: [
-          {
-            scriptHash: "0xef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
-            operation: "balanceOf",
-            args: [
-              {
-                type: "Hash160",
-                value: "0x96d5942028891de8e5d866f504b36ff5ae13ab63",
-              },
-            ],
-          },
-          {
-            scriptHash: "0xd2a4cff31913016155e38e474a2c06d08be276cf",
-            operation: "transfer",
-            args: [
-              {
-                type: "Hash160",
-                value: "0x96d5942028891de8e5d866f504b36ff5ae13ab63",
-              },
-              {
-                type: "Hash160",
-                value: "0x69ee19eba1d8f7b43ad64aeaafb64c2939c9baad",
-              },
-              {
-                type: "Integer",
-                value: "12300000",
-              },
-              {
-                type: "Any",
-                value: null,
-              },
-            ],
-          },
+        "version": 0,
+        "nonce": 2204045078,
+        "systemFee": "2168018",
+        "networkFee": "323456",
+        "validUntilBlock": "1688607",
+        "script": "0c14866a9b3750df202d7c45f5a8d2be830de4b3ca7e0c077377782e6e656f12c01f0c0873657441646d696e0c141a89d48d89f8c1a66d3d3d0ef4832cebcea92f1541627d5b52",
+        "signers": [
+            {
+                "account": "708650519706302751a7926f3ece7600b1c67e4a",
+                "scopes": "CalledByEntry",
+            },
+            {
+                "account": "7ecab3e40d83bed2a8f5457c2d20df50379b6a86",
+                "scopes": "CalledByEntry",
+            }
         ],
-        systemFee: "234234",
-        networkFee: "123123",
-        validUntilBlock: "9999999",
-        script: "0c1463ab13aef56fb304f566d8e5e81d89282094d59611c01f0c0962616c616e63654f660c14f563ea40bc283d4d0e05c48ea305b3f2a07340ef41627d5b520b02e0aebb000c14adbac939294cb6afea4ad63ab4f7d8a1eb19ee690c1463ab13aef56fb304f566d8e5e81d89282094d59614c01f0c087472616e736665720c14cf76e28bd0062c4a478ee35561011319f3cfa4d241627d5b52",
-        signers: [
-          {
-            account: "96d5942028891de8e5d866f504b36ff5ae13ab63",
-            scopes: "CalledByEntry",
-            allowedContracts: [
-              "0xef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
-              "d2a4cff31913016155e38e474a2c06d08be276cf",
-            ],
-          },
+        "invocations": [
+            {
+                "scriptHash": "0x152fa9ceeb2c83f40e3d3d6da6c1f8898dd4891a",
+                "operation": "setAdmin",
+                "args": [
+                    {
+                        "type": "String",
+                        "value": "swx.neo"
+                    },
+                    {
+                        "type": "Hash160",
+                        "value": "7ecab3e40d83bed2a8f5457c2d20df50379b6a86"
+                    }
+                ]
+            }
         ],
-        network: "TestNet",
       })
     ));
   }
