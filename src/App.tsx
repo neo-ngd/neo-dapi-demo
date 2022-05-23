@@ -318,40 +318,43 @@ function App() {
 
   async function signTransactionTestNet() {
     window.alert(JSON.stringify(
-      await dapi?.signTransaction({
-        "version": 0,
-        "nonce": 2204045078,
-        "systemFee": "2338018",
-        "networkFee": "323456",
-        "validUntilBlock": "1688607",
-        "script": "0c148b9391801e7e795f2063c356ecfd462bb0dab8000c0b6f6e65676174652e6e656f12c01f0c0873657441646d696e0c141a89d48d89f8c1a66d3d3d0ef4832cebcea92f1541627d5b52",
-        "signers": [
-            {
-                "account": "781a17f53d13aa211f369dc042344803653e34a8",
-                "scopes": "CalledByEntry",
-            },
-            {
-                "account": "00b8dab02b46fdec56c363205f797e1e8091938b",
-                "scopes": "CalledByEntry",
-            }
-        ],
-        "invocations": [
-            {
-                "scriptHash": "0x152fa9ceeb2c83f40e3d3d6da6c1f8898dd4891a",
-                "operation": "setAdmin",
-                "args": [
-                    {
-                        "type": "String",
-                        "value": "onegate.neo"
-                    },
-                    {
-                        "type": "Hash160",
-                        "value": "00b8dab02b46fdec56c363205f797e1e8091938b"
-                    }
-                ]
-            }
-        ]
-    })
+      await dapi?.signTransaction(
+        {
+          "version": 0,
+          "nonce": 2204045078,
+          "systemFee": "2338018",
+          "networkFee": "323456",
+          "validUntilBlock": "1688607",
+          "script": "0c148b9391801e7e795f2063c356ecfd462bb0dab8000c0b646564656275672e6e656f12c01f0c0873657441646d696e0c141a89d48d89f8c1a66d3d3d0ef4832cebcea92f1541627d5b52",
+          "signers": [
+              {
+                  "account": "69ee19eba1d8f7b43ad64aeaafb64c2939c9baad",
+                  "scopes": "CalledByEntry"
+              },
+              {
+                  "account": "00b8dab02b46fdec56c363205f797e1e8091938b",
+                  "scopes": "CalledByEntry"
+              }
+          ],
+          "attributes": [],
+          "invocations": [
+              {
+                  "scriptHash": "0x152fa9ceeb2c83f40e3d3d6da6c1f8898dd4891a",
+                  "operation": "setAdmin",
+                  "args": [
+                      {
+                          "type": "String",
+                          "value": "dedebug.neo"
+                      },
+                      {
+                          "type": "Hash160",
+                          "value": "00b8dab02b46fdec56c363205f797e1e8091938b"
+                      }
+                  ]
+              }
+          ]
+      }
+      )
     ));
   }
 
