@@ -154,7 +154,7 @@ function App() {
         args: [
           {
             type: "Hash160",
-            value: "0x6835f6961eadbad3e75f2ea2f7a52d04deb82005",
+            value: "0x96d5942028891de8e5d866f504b36ff5ae13ab63",
           },
         ],
         extraSystemFee: "111000",
@@ -166,7 +166,7 @@ function App() {
             scopes: "Global",
           },
           {
-            account: "96d5942028891de8e5d866f504b36ff5ae13ab63",
+            account: "0x96d5942028891de8e5d866f504b36ff5ae13ab63",
             scopes: "CalledByEntry",
             // allowedContracts: [
             //   "2bcc9c9ad6626396f507f088c5ae06ebf6fa5efa",
