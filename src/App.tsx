@@ -149,26 +149,22 @@ function App() {
   async function invoke() {
     console.log(
       await dapi?.invoke({
-        scriptHash: "2bcc9c9ad6626396f507f088c5ae06ebf6fa5efa",
-        operation: "transfer",
+        scriptHash: "0xef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
+        operation: "balanceOf",
         args: [
           {
             type: "Hash160",
-            value: "69ee19eba1d8f7b43ad64aeaafb64c2939c9baad",
-          },
-          {
-            type: "ByteArray",
-            value: "RnJhZ21lbnQgRyAyMzU2",
-          },
-          {
-            type: "Any",
-            value: null,
+            value: "0x6835f6961eadbad3e75f2ea2f7a52d04deb82005",
           },
         ],
-        extraSystemFee: "111200000",
+        extraSystemFee: "111000",
         extraNetworkFee: "222200",
         broadcastOverride: false,
         signers: [
+          {
+            account: "0xef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
+            scopes: "Global",
+          },
           {
             account: "96d5942028891de8e5d866f504b36ff5ae13ab63",
             scopes: "CalledByEntry",
