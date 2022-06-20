@@ -162,7 +162,7 @@ function App() {
           },
           {
             type: "Integer",
-            value: "0",
+            value: "100000000",
           },
         ],
         extraSystemFee: "111000",
