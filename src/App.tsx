@@ -149,12 +149,20 @@ function App() {
   async function invoke() {
     console.log(
       await dapi?.invoke({
-        scriptHash: "0xef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
-        operation: "balanceOf",
+        scriptHash: "0x41a2d4872ed920aca01f1efc61fde44eaa95297d",
+        operation: "swapNeo",
         args: [
           {
-            type: "Hash160",
-            value: "0x96d5942028891de8e5d866f504b36ff5ae13ab63",
+            type: "Address",
+            value: "NUzy2Ns2D35BTdFVqDhUCRoZb1cmix2cXS",
+          },
+          {
+            type: "Integer",
+            value: "1",
+          },
+          {
+            type: "Integer",
+            value: "0",
           },
         ],
         extraSystemFee: "111000",
@@ -162,19 +170,15 @@ function App() {
         broadcastOverride: false,
         signers: [
           {
-            account: "0xef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
+            account: "0x41a2d4872ed920aca01f1efc61fde44eaa95297d",
             scopes: "Global",
           },
           {
             account: "0x96d5942028891de8e5d866f504b36ff5ae13ab63",
-            scopes: "CalledByEntry",
-            // allowedContracts: [
-            //   "2bcc9c9ad6626396f507f088c5ae06ebf6fa5efa",
-            //   "ef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
-            // ],
+            scopes: "Global",
           },
         ],
-        network: "TestNet",
+        network: "N3T4",
       })
     );
   }
