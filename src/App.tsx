@@ -153,8 +153,8 @@ function App() {
         operation: "swapNeo",
         args: [
           {
-            type: "Address",
-            value: "NUzy2Ns2D35BTdFVqDhUCRoZb1cmix2cXS",
+            type: "Hash160",
+            value: "0x96d5942028891de8e5d866f504b36ff5ae13ab63",
           },
           {
             type: "Integer",
