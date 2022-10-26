@@ -164,6 +164,10 @@ function App() {
             type: "Integer",
             value: "100000000",
           },
+          {
+            type: "Any",
+            value: null,
+          },
         ],
         extraSystemFee: "111000",
         extraNetworkFee: "222200",
