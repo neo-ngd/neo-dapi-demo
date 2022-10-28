@@ -311,7 +311,7 @@ function App() {
           ],
           systemFee: "234234",
           networkFee: "123123",
-          validUntilBlock: "9999999",
+          validUntilBlock: 9999999,
           script:
             "0c1463ab13aef56fb304f566d8e5e81d89282094d59611c01f0c0962616c616e63654f660c14f563ea40bc283d4d0e05c48ea305b3f2a07340ef41627d5b520b02e0aebb000c14adbac939294cb6afea4ad63ab4f7d8a1eb19ee690c1463ab13aef56fb304f566d8e5e81d89282094d59614c01f0c087472616e736665720c14cf76e28bd0062c4a478ee35561011319f3cfa4d241627d5b52",
           signers: [
@@ -338,7 +338,7 @@ function App() {
           nonce: 2204045078,
           systemFee: "2338018",
           networkFee: "323456",
-          validUntilBlock: "1688607",
+          validUntilBlock: 1688607,
           script:
             "0c148b9391801e7e795f2063c356ecfd462bb0dab8000c0b646564656275672e6e656f12c01f0c0873657441646d696e0c141a89d48d89f8c1a66d3d3d0ef4832cebcea92f1541627d5b52",
           signers: [
