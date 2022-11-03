@@ -251,7 +251,7 @@ function App() {
             signers: [
               {
                 account: addressToScriptHash(account),
-                scopes: "CalledByEntry",
+                scopes: "WitnessRules",
                 rules: [
                   {
                     action: "Allow",
