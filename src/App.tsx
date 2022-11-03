@@ -405,7 +405,7 @@ function App() {
   }
 
   async function signTransactionTestNet() {
-    console.log(
+    window.alert(
       JSON.stringify(
         await dapi?.signTransaction({
           version: 0,
