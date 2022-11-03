@@ -6,7 +6,8 @@ import { addressToScriptHash } from "./utils";
 function App() {
   const [dapi, setDapi] = useState<NeoDapi>();
   const [account, setAccount] = useState<string>();
-  const [network, setNetwork] = useState<string>();
+  const [networks, setNetworks] = useState<string[]>();
+  const [defaultNetwork, setDefaultNetwork] = useState<string>();
 
   const loadDapi = useCallback(async () => {
     if (!dapi) {
@@ -21,8 +22,10 @@ function App() {
       if (dapi) {
         const account = (await dapi.getAccount()).address;
         setAccount(account);
-        const network = (await dapi.getNetworks()).defaultNetwork;
-        setNetwork(network);
+        const networks = (await dapi.getNetworks()).networks;
+        setNetworks(networks);
+        const defaultNetwork = (await dapi.getNetworks()).defaultNetwork;
+        setDefaultNetwork(defaultNetwork);
       }
     }
   }, [dapi]);
@@ -116,6 +119,7 @@ function App() {
       JSON.stringify(
         await dapi?.getTransaction({
           txid: "0xc68aac4b0bb9e88bd42086c50cebe648ad28726d2849ff73faeb93985e510587",
+          network: "MainNet",
         }),
         undefined,
         4
@@ -128,6 +132,7 @@ function App() {
       JSON.stringify(
         await dapi?.getTransaction({
           txid: "0x9960aed46fd767bfffc7fae1f35f8ef7b229bf432c8b5acc7d58ffd73551549d",
+          network: "TestNet",
         }),
         undefined,
         4
@@ -140,6 +145,7 @@ function App() {
       JSON.stringify(
         await dapi?.getApplicationLog({
           txid: "0xc68aac4b0bb9e88bd42086c50cebe648ad28726d2849ff73faeb93985e510587",
+          network: "MainNet",
         }),
         undefined,
         4
@@ -152,6 +158,7 @@ function App() {
       JSON.stringify(
         await dapi?.getApplicationLog({
           txid: "0x9960aed46fd767bfffc7fae1f35f8ef7b229bf432c8b5acc7d58ffd73551549d",
+          network: "TestNet",
         }),
         undefined,
         4
@@ -336,7 +343,7 @@ function App() {
     );
   }
 
-  async function signTransaction() {
+  async function signTransactionMainNet() {
     window.alert(
       JSON.stringify(
         await dapi?.signTransaction({
@@ -391,6 +398,7 @@ function App() {
               ],
             },
           ],
+          network: "MainNet",
         }),
         undefined,
         4
@@ -436,6 +444,7 @@ function App() {
               ],
             },
           ],
+          network: "TestNet",
         }),
         undefined,
         4
@@ -446,7 +455,8 @@ function App() {
   return dapi ? (
     <div className="App">
       <div>Account: {account}</div>
-      <div>Network: {network}</div>
+      <div>Networks: {networks?.join(", ")}</div>
+      <div>Default Network: {defaultNetwork}</div>
       <button onClick={getProvider}>getProvider</button>
       <button onClick={getNetworks}>getNetworks</button>
       <button onClick={getAccount}>getAccount</button>
@@ -466,7 +476,7 @@ function App() {
       <button onClick={invoke}>invoke</button>
       <button onClick={invokeMulti}>invokeMulti</button>
       <button onClick={signMessage}>signMessage</button>
-      <button onClick={signTransaction}>signTransaction</button>
+      <button onClick={signTransactionMainNet}>signTransaction-MainNet</button>
       <button onClick={signTransactionTestNet}>signTransaction-TestNet</button>
     </div>
   ) : (
