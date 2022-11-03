@@ -238,7 +238,7 @@ function App() {
               },
               {
                 type: "Integer",
-                value: "100000000",
+                value: "10000",
               },
               {
                 type: "Any",
@@ -299,7 +299,7 @@ function App() {
                   },
                   {
                     type: "Integer",
-                    value: "12300000",
+                    value: "10000",
                   },
                   {
                     type: "Any",
