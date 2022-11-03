@@ -89,19 +89,17 @@ function App() {
   }
 
   async function getNep17Balances() {
-    window.alert(
-      JSON.stringify(
-        await dapi?.getNep17Balances({
-          address: "NLP5mHikEuxyPCFqMCBHeP1YDyYPwCKBFu",
-          assetHashes: [
-            "0xef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
-            "0xd2a4cff31913016155e38e474a2c06d08be276cf",
-          ],
-        }),
-        undefined,
-        4
-      )
-    );
+    if (account != null) {
+      window.alert(
+        JSON.stringify(
+          await dapi?.getNep17Balances({
+            address: account,
+          }),
+          undefined,
+          4
+        )
+      );
+    }
   }
 
   async function getBlockCount() {
