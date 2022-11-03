@@ -1,11 +1,14 @@
 import { useCallback, useEffect, useState } from "react";
 import { BaseNeoDapi, NeoDapi } from "@neongd/neo-dapi";
 import "./App.css";
+import { addressToScriptHash } from "./utils";
 
 function App() {
-  const [dapi, setDapi] = useState<NeoDapi | null>(null);
+  const [dapi, setDapi] = useState<NeoDapi>();
+  const [account, setAccount] = useState<string>();
+  const [network, setNetwork] = useState<string>();
 
-  const loadDapi = useCallback(() => {
+  const loadDapi = useCallback(async () => {
     if (!dapi) {
       const dapi = window.neo
         ? new BaseNeoDapi(window.neo)
@@ -14,7 +17,13 @@ function App() {
         : window.Vital
         ? new BaseNeoDapi(window.Vital)
         : null;
-      setDapi(dapi);
+      setDapi(dapi ?? undefined);
+      if (dapi) {
+        const account = (await dapi.getAccount()).address;
+        setAccount(account);
+        const network = (await dapi.getNetworks()).defaultNetwork;
+        setNetwork(network);
+      }
     }
   }, [dapi]);
 
@@ -65,198 +74,254 @@ function App() {
   }, [loadDapi, addListeners, removeListeners]);
 
   async function getProvider() {
-    window.alert(JSON.stringify(await dapi?.getProvider()));
-  }
-
-  async function getAccount() {
-    window.alert(JSON.stringify(await dapi?.getAccount()));
+    window.alert(JSON.stringify(await dapi?.getProvider(), undefined, 4));
   }
 
   async function getNetworks() {
-    window.alert(JSON.stringify(await dapi?.getNetworks()));
+    window.alert(JSON.stringify(await dapi?.getNetworks(), undefined, 4));
   }
 
-  async function getBlockCount() {
-    console.log(await dapi?.getBlockCount({}));
+  async function getAccount() {
+    window.alert(JSON.stringify(await dapi?.getAccount(), undefined, 4));
   }
 
-  async function getBlock() {
-    console.log(await dapi?.getBlock({ blockIndex: 21373 }));
-  }
-
-  async function getApplicationLog() {
-    console.log(
-      await dapi?.getApplicationLog({
-        txid: "0xc68aac4b0bb9e88bd42086c50cebe648ad28726d2849ff73faeb93985e510587",
-      })
+  async function getNep17Balances() {
+    window.alert(
+      JSON.stringify(
+        await dapi?.getNep17Balances({
+          address: "NLP5mHikEuxyPCFqMCBHeP1YDyYPwCKBFu",
+          assetHashes: [
+            "0xef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
+            "0xd2a4cff31913016155e38e474a2c06d08be276cf",
+          ],
+        }),
+        undefined,
+        4
+      )
     );
   }
 
-  async function getTransaction() {
-    console.log(
-      await dapi?.getTransaction({
-        txid: "0xc68aac4b0bb9e88bd42086c50cebe648ad28726d2849ff73faeb93985e510587",
-      })
+  async function getBlockCount() {
+    window.alert(JSON.stringify(await dapi?.getBlockCount({}), undefined, 4));
+  }
+
+  async function getBlock() {
+    window.alert(
+      JSON.stringify(await dapi?.getBlock({ blockIndex: 1 }), undefined, 4)
+    );
+  }
+
+  async function getTransactionMainNet() {
+    window.alert(
+      JSON.stringify(
+        await dapi?.getTransaction({
+          txid: "0xc68aac4b0bb9e88bd42086c50cebe648ad28726d2849ff73faeb93985e510587",
+        }),
+        undefined,
+        4
+      )
+    );
+  }
+
+  async function getTransactionTestNet() {
+    window.alert(
+      JSON.stringify(
+        await dapi?.getTransaction({
+          txid: "0x9960aed46fd767bfffc7fae1f35f8ef7b229bf432c8b5acc7d58ffd73551549d",
+        }),
+        undefined,
+        4
+      )
+    );
+  }
+
+  async function getApplicationLogMainNet() {
+    window.alert(
+      JSON.stringify(
+        await dapi?.getApplicationLog({
+          txid: "0xc68aac4b0bb9e88bd42086c50cebe648ad28726d2849ff73faeb93985e510587",
+        }),
+        undefined,
+        4
+      )
+    );
+  }
+
+  async function getApplicationLogTestNet() {
+    window.alert(
+      JSON.stringify(
+        await dapi?.getApplicationLog({
+          txid: "0x9960aed46fd767bfffc7fae1f35f8ef7b229bf432c8b5acc7d58ffd73551549d",
+        }),
+        undefined,
+        4
+      )
     );
   }
 
   async function invokeRead() {
-    console.log(
-      await dapi?.invokeRead({
-        scriptHash: "0xef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
-        operation: "balanceOf",
-        args: [
-          {
-            type: "Hash160",
-            value: "0x6835f6961eadbad3e75f2ea2f7a52d04deb82005",
-          },
-        ],
-        network: "TestNet",
-      })
-    );
+    if (account != null) {
+      window.alert(
+        JSON.stringify(
+          await dapi?.invokeRead({
+            scriptHash: "0xef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
+            operation: "balanceOf",
+            args: [
+              {
+                type: "Hash160",
+                value: addressToScriptHash(account),
+              },
+            ],
+          }),
+          undefined,
+          4
+        )
+      );
+    }
   }
 
   async function invokeReadMulti() {
-    console.log(
-      await dapi?.invokeReadMulti({
-        invocations: [
-          {
-            scriptHash: "0xef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
-            operation: "balanceOf",
-            args: [
+    if (account != null) {
+      window.alert(
+        JSON.stringify(
+          await dapi?.invokeReadMulti({
+            invocations: [
               {
-                type: "Hash160",
-                value: "0x6835f6961eadbad3e75f2ea2f7a52d04deb82005",
+                scriptHash: "0xef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
+                operation: "balanceOf",
+                args: [
+                  {
+                    type: "Hash160",
+                    value: addressToScriptHash(account),
+                  },
+                ],
+              },
+              {
+                scriptHash: "0xd2a4cff31913016155e38e474a2c06d08be276cf",
+                operation: "balanceOf",
+                args: [
+                  {
+                    type: "Hash160",
+                    value: addressToScriptHash(account),
+                  },
+                ],
               },
             ],
-          },
-          {
-            scriptHash: "0xd2a4cff31913016155e38e474a2c06d08be276cf",
-            operation: "balanceOf",
-            args: [
-              {
-                type: "Hash160",
-                value: "0x6835f6961eadbad3e75f2ea2f7a52d04deb82005",
-              },
-            ],
-          },
-        ],
-        network: "TestNet",
-      })
-    );
+          }),
+          undefined,
+          4
+        )
+      );
+    }
   }
 
   async function invoke() {
-    console.log(
-      await dapi?.invoke({
-        scriptHash: "0xd2a4cff31913016155e38e474a2c06d08be276cf",
-        operation: "transfer",
-        args: [
-          {
-            type: "Hash160",
-            value: "0x96d5942028891de8e5d866f504b36ff5ae13ab63",
-          },
-          {
-            type: "Hash160",
-            value: "0x69ee19eba1d8f7b43ad64aeaafb64c2939c9baad",
-          },
-          {
-            type: "Integer",
-            value: "100000000",
-          },
-          {
-            type: "Any",
-            value: null,
-          },
-        ],
-        extraSystemFee: "111000",
-        extraNetworkFee: "222200",
-        broadcastOverride: false,
-        signers: [
-          {
-            account: "0x96d5942028891de8e5d866f504b36ff5ae13ab63",
-            scopes: "CalledByEntry",
-            rules: [
-              {
-                action: "Allow",
-                condition: {
-                  type: "Boolean",
-                  expression: true,
-                },
-              },
-            ],
-          },
-        ],
-        network: "N3T5",
-      })
-    );
-  }
-
-  async function invokeMulti() {
-    console.log(
-      await dapi?.invokeMulti({
-        invocations: [
-          {
-            scriptHash: "0xef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
-            operation: "balanceOf",
-            args: [
-              {
-                type: "Hash160",
-                value: "0x96d5942028891de8e5d866f504b36ff5ae13ab63",
-              },
-            ],
-          },
-          {
+    if (account != null) {
+      window.alert(
+        JSON.stringify(
+          await dapi?.invoke({
             scriptHash: "0xd2a4cff31913016155e38e474a2c06d08be276cf",
             operation: "transfer",
             args: [
               {
                 type: "Hash160",
-                value: "0x96d5942028891de8e5d866f504b36ff5ae13ab63",
+                value: addressToScriptHash(account),
               },
               {
                 type: "Hash160",
-                value: "0x69ee19eba1d8f7b43ad64aeaafb64c2939c9baad",
+                value: addressToScriptHash(account),
               },
               {
                 type: "Integer",
-                value: "12300000",
+                value: "100000000",
               },
               {
                 type: "Any",
                 value: null,
               },
             ],
-          },
-        ],
-        extraSystemFee: "10000000",
-        extraNetworkFee: "123123",
-        broadcastOverride: false,
-        signers: [
-          {
-            account: "96d5942028891de8e5d866f504b36ff5ae13ab63",
-            scopes: "CalledByEntry",
-            allowedContracts: [
-              "0xef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
-              "d2a4cff31913016155e38e474a2c06d08be276cf",
+            extraSystemFee: "111000",
+            extraNetworkFee: "222200",
+            broadcastOverride: false,
+            signers: [
+              {
+                account: addressToScriptHash(account),
+                scopes: "CalledByEntry",
+                rules: [
+                  {
+                    action: "Allow",
+                    condition: {
+                      type: "Boolean",
+                      expression: true,
+                    },
+                  },
+                ],
+              },
             ],
-          },
-        ],
-        network: "N3T5",
-      })
-    );
+          })
+        )
+      );
+    }
   }
 
-  async function getNep17Balances() {
-    console.log(
-      await dapi?.getNep17Balances({
-        address: "NLP5mHikEuxyPCFqMCBHeP1YDyYPwCKBFu",
-        assetHashes: [
-          "0xef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
-          "0xd2a4cff31913016155e38e474a2c06d08be276cf",
-        ],
-      })
-    );
+  async function invokeMulti() {
+    if (account != null) {
+      window.alert(
+        JSON.stringify(
+          await dapi?.invokeMulti({
+            invocations: [
+              {
+                scriptHash: "0xef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
+                operation: "balanceOf",
+                args: [
+                  {
+                    type: "Hash160",
+                    value: addressToScriptHash(account),
+                  },
+                ],
+              },
+              {
+                scriptHash: "0xd2a4cff31913016155e38e474a2c06d08be276cf",
+                operation: "transfer",
+                args: [
+                  {
+                    type: "Hash160",
+                    value: addressToScriptHash(account),
+                  },
+                  {
+                    type: "Hash160",
+                    value: addressToScriptHash(account),
+                  },
+                  {
+                    type: "Integer",
+                    value: "12300000",
+                  },
+                  {
+                    type: "Any",
+                    value: null,
+                  },
+                ],
+              },
+            ],
+            extraSystemFee: "10000000",
+            extraNetworkFee: "123123",
+            broadcastOverride: false,
+            signers: [
+              {
+                account: addressToScriptHash(account),
+                scopes: "CalledByEntry",
+                allowedContracts: [
+                  "0xef4073a0f2b305a38ec4050e4d3d28bc40ea63f5",
+                  "0xd2a4cff31913016155e38e474a2c06d08be276cf",
+                ],
+              },
+            ],
+          }),
+          undefined,
+          4
+        )
+      );
+    }
   }
 
   async function signMessage() {
@@ -264,7 +329,9 @@ function App() {
       JSON.stringify(
         await dapi?.signMessage({
           message: "Hello World!",
-        })
+        }),
+        undefined,
+        4
       )
     );
   }
@@ -324,8 +391,9 @@ function App() {
               ],
             },
           ],
-          network: "N3T4",
-        })
+        }),
+        undefined,
+        4
       )
     );
   }
@@ -368,25 +436,35 @@ function App() {
               ],
             },
           ],
-        })
+        }),
+        undefined,
+        4
       )
     );
   }
 
   return dapi ? (
-    <div>
+    <div className="App">
+      <div>Account: {account}</div>
+      <div>Network: {network}</div>
       <button onClick={getProvider}>getProvider</button>
-      <button onClick={getAccount}>getAccount</button>
       <button onClick={getNetworks}>getNetworks</button>
+      <button onClick={getAccount}>getAccount</button>
+      <button onClick={getNep17Balances}>getNep17Balances</button>
       <button onClick={getBlockCount}>getBlockCount</button>
       <button onClick={getBlock}>getBlock</button>
-      <button onClick={getApplicationLog}>getApplicationLog</button>
-      <button onClick={getTransaction}>getTransaction</button>
+      <button onClick={getTransactionMainNet}>getTransaction-MainNet</button>
+      <button onClick={getTransactionTestNet}>getTransaction-TestNet</button>
+      <button onClick={getApplicationLogMainNet}>
+        getApplicationLog-MainNet
+      </button>
+      <button onClick={getApplicationLogTestNet}>
+        getApplicationLog-TestNet
+      </button>
       <button onClick={invokeRead}>invokeRead</button>
       <button onClick={invokeReadMulti}>invokeReadMulti</button>
       <button onClick={invoke}>invoke</button>
       <button onClick={invokeMulti}>invokeMulti</button>
-      <button onClick={getNep17Balances}>getNep17Balances</button>
       <button onClick={signMessage}>signMessage</button>
       <button onClick={signTransaction}>signTransaction</button>
       <button onClick={signTransactionTestNet}>signTransaction-TestNet</button>
