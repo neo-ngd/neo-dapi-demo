@@ -88,19 +88,6 @@ function App() {
     window.alert(JSON.stringify(await dapi?.getAccount(), undefined, 4));
   }
 
-  async function getNep17Balances() {
-    if (account != null) {
-      window.alert(
-        JSON.stringify(
-          await dapi?.getNep17Balances({
-            address: account,
-          }),
-          undefined,
-          4
-        )
-      );
-    }
-  }
 
   async function getBlockCount() {
     window.alert(JSON.stringify(await dapi?.getBlockCount({}), undefined, 4));
@@ -163,6 +150,21 @@ function App() {
       )
     );
   }
+
+  async function getNep17Balances() {
+    if (account != null) {
+      window.alert(
+        JSON.stringify(
+          await dapi?.getNep17Balances({
+            address: account,
+          }),
+          undefined,
+          4
+        )
+      );
+    }
+  }
+
 
   async function invokeRead() {
     if (account != null) {
@@ -470,7 +472,6 @@ function App() {
       <button onClick={getProvider}>getProvider</button>
       <button onClick={getNetworks}>getNetworks</button>
       <button onClick={getAccount}>getAccount</button>
-      <button onClick={getNep17Balances}>getNep17Balances</button>
       <button onClick={getBlockCount}>getBlockCount</button>
       <button onClick={getBlock}>getBlock</button>
       <button onClick={getTransactionMainNet}>getTransaction-MainNet</button>
@@ -481,6 +482,7 @@ function App() {
       <button onClick={getApplicationLogTestNet}>
         getApplicationLog-TestNet
       </button>
+      <button onClick={getNep17Balances}>getNep17Balances</button>
       <button onClick={invokeRead}>invokeRead</button>
       <button onClick={invokeReadMulti}>invokeReadMulti</button>
       <button onClick={invoke}>invoke</button>
