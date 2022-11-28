@@ -341,6 +341,18 @@ function App() {
     );
   }
 
+  async function signMessageWithoutSalt() {
+    window.alert(
+      JSON.stringify(
+        await dapi?.signMessageWithoutSalt({
+          message: "Hello World! without salt",
+        }),
+        undefined,
+        4
+      )
+    );
+  }
+
   async function signTransactionMainNet() {
     window.alert(
       JSON.stringify(
@@ -474,6 +486,7 @@ function App() {
       <button onClick={invoke}>invoke</button>
       <button onClick={invokeMulti}>invokeMulti</button>
       <button onClick={signMessage}>signMessage</button>
+      <button onClick={signMessageWithoutSalt}>signMessageWithoutSalt</button>
       <button onClick={signTransactionMainNet}>signTransaction-MainNet</button>
       <button onClick={signTransactionTestNet}>signTransaction-TestNet</button>
     </div>
