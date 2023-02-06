@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useState } from "react";
-import { BaseNeoDapi, NeoDapi } from "@neongd/neo-dapi";
+import { BaseDapi, Dapi } from "@neongd/neo-dapi";
 import "./App.css";
 import { addressToScriptHash } from "./utils";
 
 function App() {
-  const [dapi, setDapi] = useState<NeoDapi>();
+  const [dapi, setDapi] = useState<Dapi>();
   const [account, setAccount] = useState<string>();
   const [networks, setNetworks] = useState<string[]>();
   const [defaultNetwork, setDefaultNetwork] = useState<string>();
@@ -12,11 +12,11 @@ function App() {
   const loadDapi = useCallback(async () => {
     if (!dapi) {
       const dapi = window.neo
-        ? new BaseNeoDapi(window.neo)
+        ? new BaseDapi(window.neo)
         : window.OneGate
-        ? new BaseNeoDapi(window.OneGate)
+        ? new BaseDapi(window.OneGate)
         : window.Vital
-        ? new BaseNeoDapi(window.Vital)
+        ? new BaseDapi(window.Vital)
         : null;
       setDapi(dapi ?? undefined);
       if (dapi) {
