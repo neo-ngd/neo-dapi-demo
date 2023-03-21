@@ -1,11 +1,11 @@
 /// <reference types="react-scripts" />
 
-import { INeoProvider } from "@neongd/neo-provider";
+import { Provider } from "@neongd/neo-provider";
 
 declare global {
   interface Window {
-    neo?: INeoProvider;
-    OneGate?: INeoProvider;
-    Vital?: INeoProvider;
+    neo?: Provider;
+    OneGate?: Provider;
+    Vital?: Provider;
   }
 }
